@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="#nowhere">
+        <fieldset>
+            <legend>Tarefa</legend>
+            <label for="data-criacao">Data de Criação</label>
+            <input type="date" name="data-criacao" id="data-criacao" required disabled>
+            <label for="data-conclusao">Data de Limite de Conclusão</label>
+            <input type="date" name="data-conclusao" id="data-conclusao" required>
+            <label for="descricao-tarefa">Descrição da Tarefa</label>
+            <textarea name="descricao-tarefa" id="descricao-tarefa" cols="30" rows="5" required minlength="10"></textarea>
+            <button type="submit">Criar Card</button>
+        </fieldset>
+    </form>
+    <script src="app.js"></script>
+</body>
+</html>
