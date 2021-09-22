@@ -1,0 +1,43 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header{
+    background-color: gray;
+    height: 80px;
+}
+
+.logo{
+    text-align: center;
+}
+legend{
+    text-align: center;
+}
+
+form{
+    border: 1px solid black;
+    box-shadow: 10px 6px 6px rgb(41, 40, 40);
+    background-color: whitesmoke;
+    padding: 3%;
+    max-width: 400px;
+    margin: 5% auto;
+    border-radius: 20px;
+}
+
+input{
+    border: 1px solid rgb(43, 42, 42);
+    font-family: system-ui;
+    border-radius: 5px;
+    text-align: left;
+    padding: 3% 3%;
+    width: 90%;
+    font-weight: 500;
+    
+}
+
+input:hover{
+    box-shadow: 4px 4px 4px rgb(20, 20, 20);
+    transition: 0.4s;
+}
