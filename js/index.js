@@ -1,4 +1,4 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#card-data');
 const finalDateInput = document.querySelector('#data-conclusao');
 const descInput = document.querySelector('#descricao-tarefa');
 document.querySelector('#data-criacao').valueAsDate = new Date();
@@ -11,7 +11,7 @@ form.addEventListener('submit', (e) => {
 form.addEventListener('input', (e) => {
     e.target.setCustomValidity('');
     e.target.checkValidity();
-    if(e.target.name === 'data-conclusao'){
+    if(e.target.id === 'data-conclusao'){
         checkDateRange(e.target);
     }
 });
