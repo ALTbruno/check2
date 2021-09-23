@@ -48,11 +48,11 @@ let checkDateRange = function (input) {
 }
 
 function handleFormSubmit(event) {
-    let cards = new Array(JSON.parse(localStorage.getItem('card')));
-    console.log(cards);
-    let dados = new FormData(event.target);    
-    let formJSON = Object.fromEntries(dados.entries());
+    let cards = new Array();
+    cards = cards.concat(JSON.parse(localStorage.getItem('card'))); 
+    let data = new FormData(event.target);
+    let formJSON = Object.fromEntries(data.entries());
     cards.push(formJSON);
-    let jasonStatan = JSON.stringify(cards, null, 2);
+    let jasonStatan = JSON.stringify(cards);
     localStorage.setItem('card', jasonStatan);
   }
