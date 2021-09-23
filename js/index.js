@@ -5,6 +5,7 @@ document.querySelector('#data-criacao').valueAsDate = new Date();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    handleFormSubmit(e);
     location.href = 'card.html';
 });
 
@@ -38,3 +39,13 @@ let checkDateRange = function (input) {
         input.setCustomValidity('A data de conclusão não pode ser menor que a data de criação!');
     }
 }
+
+function handleFormSubmit(event) {
+    let cards = new Array(JSON.parse(localStorage.getItem('card')));
+    console.log(cards);
+    let dados = new FormData(event.target);    
+    let formJSON = Object.fromEntries(dados.entries());
+    cards.push(formJSON);
+    let jasonStatan = JSON.stringify(cards, null, 2);
+    localStorage.setItem('card', jasonStatan);
+  }
