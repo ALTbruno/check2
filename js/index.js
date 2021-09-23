@@ -5,7 +5,7 @@ document.querySelector('#data-criacao').valueAsDate = new Date();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    criarCard();
+    location.href = 'card.html';
 });
 
 form.addEventListener('input', (e) => {
@@ -30,16 +30,6 @@ descInput.addEventListener('invalid', () => {
         descInput.setCustomValidity('A descrição deve ter pelo menos 10 caracteres!');
     }
 });
-
-let criarCard = function () {
-    // TO DO: Criar card
-    // USAR LOCALSTORAGE
-    let cardDiv = document.createElement('div');
-    cardDiv.classList.add('card');
-    let cardBody = document.createElement('div');
-    cardBody.classList.add('card-body');
-    
-}
 
 let checkDateRange = function (input) {
     let dataCriacao = new Date(document.querySelector('#data-criacao').valueAsDate);
