@@ -1,44 +1,13 @@
-const form = document.querySelector('form');
-const finalDateInput = document.querySelector('#data-conclusao');
-const descInput = document.querySelector('#descricao-tarefa');
-document.querySelector('#data-criacao').valueAsDate = new Date();
-
-form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    criarCardUser();
-    criarCardAPI();
-});
-
-form.addEventListener('input', (e) => {
-    e.target.setCustomValidity('');
-    e.target.checkValidity();
-    if(e.target.name === 'data-conclusao'){
-        checkDateRange(e.target);
-    }
-});
-
-finalDateInput.addEventListener('invalid', () => {
-    if (finalDateInput.validity.valueMissing) {
-        finalDateInput.setCustomValidity('Por favor, preencha a data de conclusão!');
-    }
-});
-
-descInput.addEventListener('invalid', () => {
-    if (descInput.validity.valueMissing) {
-        descInput.setCustomValidity('Por favor, preencha a descrição!');
-    }
-    if(descInput.validity.tooShort) {
-        descInput.setCustomValidity('A descrição deve ter pelo menos 10 caracteres!');
-    }
-});
+const cardSection = document.querySelector('#card-section');
 
 let criarCardUser = function () {
     // TO DO: Refatorar função para página card.html (remover cardSection e Append)
     // USAR LOCALSTORAGE
 
     // coluna de cards
-    let cardSection = document.createElement('div');
-    cardSection.classList.add('col-md-3', 'col-sm-12')
+    let divColCards = document.createElement('div');
+    divColCards.classList.add('col-md-3', 'col-sm-12');
+    divColCards.setAttribute('id', 'card-col');
 
     // card 
     let card = document.createElement('div');
@@ -79,13 +48,16 @@ let criarCardUser = function () {
     // elementos do card
     let cardDesc = document.createElement('div');
     cardDesc.classList.add('container','card-desc');
-    cardDesc.innerText = descInput.value;
+    // TO DO: settar conteúdo da descrição do card
+    cardDesc.innerText = 'Descrição do card';
     let cardData = document.createElement('div');
     cardData.classList.add('container','card-data');
-    cardData.innerText = document.querySelector('#data-criacao').value;
+    // TO DO: settar data de criação
+    cardData.innerText = 'Data de criação';
     let cardFinal = document.createElement('div');
     cardFinal.classList.add('container','card-final');
-    cardFinal.innerText = document.querySelector('#data-conclusao').value;
+    // TO DO: settar data de conclusão
+    cardFinal.innerText = 'Data de conclusão';
     let cardCheck = document.createElement('div');
     cardCheck.classList.add('form-check');
     let cardCheckInput = document.createElement('input');
@@ -117,15 +89,9 @@ let criarCardUser = function () {
     btnRow.appendChild(btnExcluirCol);
     btnExcluirCol.appendChild(cardBtnExcluir);
 
-    // adicionando card ao cardCol
-    cardSection.appendChild(card);
-    document.body.appendChild(cardSection);
+    // adicionando card ao container dele
+    divColCards.appendChild(card);
+    cardSection.appendChild(divColCards);
 }
 
-let checkDateRange = function (input) {
-    let dataCriacao = new Date(document.querySelector('#data-criacao').valueAsDate);
-    let dataConclusao = new Date(input.valueAsDate); 
-    if(dataConclusao < dataCriacao){
-        input.setCustomValidity('A data de conclusão não pode ser menor que a data de criação!');
-    }
-}
+criarCardUser();
