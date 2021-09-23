@@ -10,13 +10,34 @@
 </head>
 <body>
     <header>
-        <div class="logo">LOGO</div>
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-secondary">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/notepad-2642816-2192663.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    TO DO
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
+                    </div>
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-sm btn-dark" type="button">Dark Mode</button>
+                </div>
+            </div>
+        </nav>
     </header>
     <section class="text-center">
-        <h1>CARDS PARA TODOS!</h1>
-        <div class="row justify-content-around" id="card-section">
-            
-        </div>
+        <h1>USER CARD</h2>
+        <div class="row justify-content-around" id="card-section-user"></div>
+    </section>
+    <section class="text-center">
+        <h1>API CARD</h2>
+        <div class="row justify-content-around" id="card-section-api"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
     <script src="/js/card.js"></script>

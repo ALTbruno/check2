@@ -1,4 +1,9 @@
-const cardSection = document.querySelector('#card-section');
+const cardSectionUser = document.querySelector('#card-section-user');
+const cardSectionAPI = document.querySelector('#card-section-api');
+
+document.querySelector(".navbar-brand").addEventListener('click', function () {
+    location.href = 'index.html';
+});
 
 let criarCardUser = function () {
     // TO DO: Refatorar função para página card.html (remover cardSection e Append)
@@ -91,7 +96,7 @@ let criarCardUser = function () {
 
     // adicionando card ao container dele
     divColCards.appendChild(card);
-    cardSection.appendChild(divColCards);
+    cardSectionUser.appendChild(divColCards);
 }
 
 criarCardUser();
