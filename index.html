@@ -41,15 +41,19 @@
                 <form id="card-data">
                     <div class="form-group">
                         <label for="data-criacao">Data de Criação</label>
-                        <input type="date" class="form-control" id="data-criacao" aria-describedby="Data de Hoje" readonly>
+                        <input type="date" class="form-control" name="inicio" id="data-criacao" aria-describedby="Data de Hoje" readonly>
                     </div>
                     <div class="form-group">
                         <label for="data-conclusao">Data de Limite de Conclusão</label>
-                        <input type="date" class="form-control" id="data-conclusao" aria-describedby="Data término da tarefa" required>
+                        <input type="date" class="form-control" name="fim" id="data-conclusao" aria-describedby="Data término da tarefa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Título da tarefa</label>
+                        <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="Título da tarefa" maxlength="45" required>
                     </div>
                     <div class="form-group">
                         <label for="descricao-tarefa">Descrição da Tarefa</label>
-                        <textarea class="form-control" id="descricao-tarefa" rows="5" required minlength="10"></textarea>
+                        <textarea class="form-control" name="descricao" id="descricao-tarefa" rows="5" required minlength="10"></textarea>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
