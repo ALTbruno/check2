@@ -1,0 +1,16 @@
+form {
+    border: 1px solid black;
+    box-shadow: 12px 6px 6px rgb(41, 40, 40);
+    background-color: whitesmoke;
+    padding: 3%;
+    width: 25rem;
+    height: 30rem;
+    margin: 5% auto;
+    border-radius: 5px;
+    display: block; 
+
+}
+
+input{
+    background-color: green;
+}
