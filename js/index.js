@@ -56,3 +56,57 @@ function handleFormSubmit(event) {
     let jasonStatan = JSON.stringify(cards);
     localStorage.setItem('card', jasonStatan);
   }
+
+  //Implementação do Dark mode
+
+
+let botaoDark = document.getElementById('btn-dark');
+let nav = document.querySelector('nav');
+let a = document.getElementById('a-to-do');
+let h1 = document.querySelector('h1');
+let sobreNos = document.getElementById('about-us');
+
+
+function darkMode()
+{
+    document.querySelector('body').style.backgroundColor = "black";
+    botaoDark.classList.remove("btn-dark");
+    botaoDark.classList.add("btn-light");
+    botaoDark.innerHTML = 'Light Mode';
+    
+    nav.classList.remove('bg-light');
+    nav.classList.add('bg-black');
+
+    a.style.color = "white";
+    h1.style.color = "white";
+    sobreNos.style.color = "white";
+
+}
+
+function lightMode()
+{
+    document.querySelector('body').style.backgroundColor = "white";
+    botaoDark.classList.remove("btn-light");
+    botaoDark.classList.add("btn-dark");
+    botaoDark.innerHTML = 'Dark Mode';
+    
+    nav.classList.remove('bg-black');
+    nav.classList.add('bg-light');
+
+
+    a.style.color = "black";
+    h1.style.color = "black";
+    sobreNos.style.color = "black";
+}
+
+botaoDark.addEventListener('click', () =>
+{
+    if(document.querySelector('body').style.backgroundColor == "white")
+    {
+        darkMode();
+    }
+    else
+    {
+        lightMode();
+    }
+})
