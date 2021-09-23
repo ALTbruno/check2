@@ -11,6 +11,6 @@ form {
 
 }
 
-input{
+#card-data input,#card-data textarea{
     background-color: green;
 }
