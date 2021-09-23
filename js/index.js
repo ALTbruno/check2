@@ -1,17 +1,19 @@
-const form = document.querySelector('form');
+const form = document.querySelector('#card-data');
 const finalDateInput = document.querySelector('#data-conclusao');
+const titleInput = document.querySelector('#titulo');
 const descInput = document.querySelector('#descricao-tarefa');
 document.querySelector('#data-criacao').valueAsDate = new Date();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    criarCard();
+    handleFormSubmit(e);
+    //location.href = 'card.html';
 });
 
 form.addEventListener('input', (e) => {
     e.target.setCustomValidity('');
     e.target.checkValidity();
-    if(e.target.name === 'data-conclusao'){
+    if(e.target.id === 'data-conclusao'){
         checkDateRange(e.target);
     }
 });
@@ -19,6 +21,12 @@ form.addEventListener('input', (e) => {
 finalDateInput.addEventListener('invalid', () => {
     if (finalDateInput.validity.valueMissing) {
         finalDateInput.setCustomValidity('Por favor, preencha a data de conclusão!');
+    }
+});
+
+titleInput.addEventListener('invalid',()=>{
+    if (titleInput.validity.valueMissing){
+        titleInput.setCustomValidity('Por favor, dê um título para a sua tarefa!');
     }
 });
 
@@ -31,11 +39,6 @@ descInput.addEventListener('invalid', () => {
     }
 });
 
-let criarCard = function () {
-    // TO DO: Criar card
-    // USAR LOCALSTORAGE
-}
-
 let checkDateRange = function (input) {
     let dataCriacao = new Date(document.querySelector('#data-criacao').valueAsDate);
     let dataConclusao = new Date(input.valueAsDate); 
@@ -43,3 +46,13 @@ let checkDateRange = function (input) {
         input.setCustomValidity('A data de conclusão não pode ser menor que a data de criação!');
     }
 }
+
+function handleFormSubmit(event) {
+    let cards = new Array();
+    cards = cards.concat(JSON.parse(localStorage.getItem('card'))); 
+    let data = new FormData(event.target);
+    let formJSON = Object.fromEntries(data.entries());
+    cards.push(formJSON);
+    let jasonStatan = JSON.stringify(cards);
+    localStorage.setItem('card', jasonStatan);
+  }

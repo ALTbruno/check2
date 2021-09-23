@@ -4,21 +4,63 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>TO DO</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+    <!-- css -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
-    <form action="#nowhere">
-        <fieldset>
-            <legend>Tarefa</legend>
-            <label for="data-criacao">Data de Criação</label>
-            <input type="date" name="data-criacao" id="data-criacao" required disabled>
-            <label for="data-conclusao">Data de Limite de Conclusão</label>
-            <input type="date" name="data-conclusao" id="data-conclusao" required>
-            <label for="descricao-tarefa">Descrição da Tarefa</label>
-            <textarea name="descricao-tarefa" id="descricao-tarefa" cols="30" rows="5" required minlength="10"></textarea>
-            <button type="submit">Criar Card</button>
-        </fieldset>
-    </form>
-    <script src="app.js"></script>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="/img/notepad-2642816-2192663.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
+                    TO DO
+                </a>
+                <button class="navbar-toggler" id="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
+                        </li>
+                    </ul>
+                    <div class="d-flex">
+                        <button class="btn btn-dark" type="submit">Dark Mode</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <h1 class="text-center">TO DO</h1>
+    <div id="container">
+        <div class="row justify-content-center" style="margin: auto;">
+            <div class="col-lg-4">
+                <form id="card-data">
+                    <div class="form-group">
+                        <label for="data-criacao">Data de Criação</label>
+                        <input type="date" class="form-control" name="inicio" id="data-criacao" aria-describedby="Data de Hoje" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label for="data-conclusao">Data de Limite de Conclusão</label>
+                        <input type="date" class="form-control" name="fim" id="data-conclusao" aria-describedby="Data término da tarefa" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="titulo">Título da tarefa</label>
+                        <input type="text" class="form-control" name="titulo" id="titulo" aria-describedby="Título da tarefa" maxlength="40" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="descricao-tarefa">Descrição da Tarefa</label>
+                        <textarea class="form-control" name="descricao" id="descricao-tarefa" rows="5" required minlength="10"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
 </body>
 </html>
