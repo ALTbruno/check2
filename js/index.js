@@ -1,12 +1,13 @@
 const form = document.querySelector('#card-data');
 const finalDateInput = document.querySelector('#data-conclusao');
+const titleInput = document.querySelector('#titulo');
 const descInput = document.querySelector('#descricao-tarefa');
 document.querySelector('#data-criacao').valueAsDate = new Date();
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     handleFormSubmit(e);
-    location.href = 'card.html';
+    //location.href = 'card.html';
 });
 
 form.addEventListener('input', (e) => {
@@ -20,6 +21,12 @@ form.addEventListener('input', (e) => {
 finalDateInput.addEventListener('invalid', () => {
     if (finalDateInput.validity.valueMissing) {
         finalDateInput.setCustomValidity('Por favor, preencha a data de conclusão!');
+    }
+});
+
+titleInput.addEventListener('invalid',()=>{
+    if (titleInput.validity.valueMissing){
+        titleInput.setCustomValidity('Por favor, dê um título para a sua tarefa!');
     }
 });
 
