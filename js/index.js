@@ -55,8 +55,8 @@ function handleFormSubmit(event) {
     let data = new FormData(event.target);
     let formJSON = Object.fromEntries(data.entries());
     formJSON.concluido = false;
-    formJSON.inicio = formJSON.inicio.replace(/-/g, '\/');
-    formJSON.fim = formJSON.fim.replace(/-/g, '\/');
+    formJSON.inicio = new Date(formJSON.inicio.replace(/-/g, '\/'));
+    formJSON.fim = new Date(formJSON.fim.replace(/-/g, '\/'));
     cards.push(formJSON);
     let jasonStatan = JSON.stringify(cards);
     localStorage.setItem('card', jasonStatan);

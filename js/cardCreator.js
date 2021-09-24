@@ -1,4 +1,10 @@
-export default function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) {
+let dateFormater = function (dataJSON) {
+    let data = new Date(dataJSON);
+    data = data.getFullYear()+'/'+`${data.getMonth()+1}`+'/'+data.getDate();
+    return new Date(data).toLocaleDateString();
+}
+
+export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) {
     // coluna de cards
     let divColCards = document.createElement('div');
     divColCards.classList.add('col-sm-12','col-md-4','mt-5');
@@ -45,7 +51,7 @@ export default function criarCardUser (titulo,descricao,dataInicio,dataFinal,con
     cardDesc.innerText = descricao;
     let cardData = document.createElement('div');
     cardData.classList.add('container','card-data');
-    cardData.innerText = dataInicio + ' - ' + dataFinal;
+    cardData.innerText = dateFormater(dataInicio) + ' - ' + dateFormater(dataFinal);
     let cardCheck = document.createElement('div');
     cardCheck.classList.add('form-check');
     let cardCheckInput = document.createElement('input');
@@ -78,4 +84,8 @@ export default function criarCardUser (titulo,descricao,dataInicio,dataFinal,con
     divColCards.appendChild(card);
 
     return divColCards;
+}
+
+export function criarCardAPI () {
+    //TO DO
 }
