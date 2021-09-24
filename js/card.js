@@ -90,11 +90,15 @@ let criarCardUser = function (titulo,descricao,dataInicio,dataFinal,concluido) {
     cardSectionUser.appendChild(divColCards);
 }
 
+let dateFormater = function (date) {
+    return new Date(date).toLocaleDateString();
+}
+
 let userCards = new Array();
 userCards = userCards.concat(JSON.parse(localStorage.getItem('card')));
 console.log(userCards);
 for (const card of userCards) {
     inicioDataFileds = card.inicio.split('-');
     fimDataFileds = card.fim.split('-');
-    criarCardUser(card.titulo,card.descricao,new Date(...inicioDataFileds),new Date(...fimDataFileds),card.concluido);
+    criarCardUser(card.titulo,card.descricao,dateFormater(card.inicio),dateFormater(card.fim),card.concluido);
 }

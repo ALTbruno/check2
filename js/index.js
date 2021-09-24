@@ -7,7 +7,7 @@ document.querySelector('#data-criacao').valueAsDate = new Date();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     handleFormSubmit(e);
-    location.href = 'card.html';
+    //location.href = 'card.html';
 });
 
 form.addEventListener('input', (e) => {
@@ -52,10 +52,11 @@ function handleFormSubmit(event) {
     if(localStorage.getItem('card')!==null){
         cards = cards.concat(JSON.parse(localStorage.getItem('card')));
     }
-    console.log(cards);
     let data = new FormData(event.target);
     let formJSON = Object.fromEntries(data.entries());
     formJSON.concluido = false;
+    formJSON.inicio = formJSON.inicio.replace(/-/g, '\/');
+    formJSON.fim = formJSON.fim.replace(/-/g, '\/');
     cards.push(formJSON);
     let jasonStatan = JSON.stringify(cards);
     localStorage.setItem('card', jasonStatan);
