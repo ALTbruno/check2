@@ -7,7 +7,7 @@ document.querySelector('#data-criacao').valueAsDate = new Date();
 form.addEventListener('submit', (e) => {
     e.preventDefault();
     handleFormSubmit(e);
-    //location.href = 'card.html';
+    window.location.href = 'card.html';
 });
 
 form.addEventListener('input', (e) => {
