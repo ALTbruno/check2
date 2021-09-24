@@ -9,11 +9,11 @@
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body style="background-color: white;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" id="a-to-do" href="#">
                     <img src="/img/notepad-2642816-2192663.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                     TO DO
                 </a>
@@ -24,11 +24,11 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Sobre nós</a>
+                            <a class="nav-link active" id="about-us" aria-current="page" href="#">Sobre nós</a>
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <button class="btn btn-dark" type="submit">Dark Mode</button>
+                        <button class="btn btn-dark" type="submit" id="btn-dark">Dark Mode</button>
                     </div>
                 </div>
             </div>
@@ -55,12 +55,15 @@
                         <label for="descricao-tarefa">Descrição da Tarefa</label>
                         <textarea class="form-control" name="descricao" id="descricao-tarefa" rows="5" required minlength="10"></textarea>
                     </div>
+                    <div class="d-flex justify-content-center mt-4">
                     <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
         </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
-    <script src="./js/index.js"></script>
+    </div>   
 </body>
+
+    <script  src="./js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </html>
