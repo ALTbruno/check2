@@ -1,16 +1,50 @@
+
+h1{
+    font-family: 'Inter', sans-serif; 
+}
+
+
 form {
-    border: 1px solid black;
-    box-shadow: 12px 6px 6px rgb(41, 40, 40);
-    background-color: whitesmoke;
+    border: 1px solid;
+    box-shadow: 6px 2px 2px rgb(102, 100, 100);
+    background-color: white;
     padding: 3%;
-    width: 25rem;
     height: 30rem;
     margin: 5% auto;
-    border-radius: 5px;
-    display: block; 
-
+    font-family: 'Inter', sans-serif;    
+    border-radius: 2%;
 }
 
-#card-data input,#card-data textarea{
-    background-color: green;
+#card-data input{
+    margin-bottom: 4%;
+    background-color: white;
+    border: 0;
+    border-bottom: 1px solid black;
+    font-family: 'Inter', sans-serif;
 }
+/* HOVER INPUTS */
+
+
+/* BOTÃO ENVIAR */
+#botao-submit{
+    text-align: center;
+    background-color: rgb(19, 19, 204);
+    border: 0;
+    padding: 3%;
+    margin-top: 2%;
+    border-radius: 20px;
+    font-size: 18px;
+    font-family: system-ui;
+    color: whitesmoke;
+    transition: 0.4s;
+}
+
+/* HOVER E ANIMAÇÕES DO BOTÂO  */
+#botao-submit:hover {
+    transform: skewY(2deg);
+    cursor: pointer;
+    background-color: rgb(22, 36, 240);
+    transition: 0.4s;
+    /* font-size: 20px; */
+}    
+
