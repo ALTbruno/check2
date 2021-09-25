@@ -44,13 +44,13 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
 
     // elementos do card
     let cardTitle = document.createElement('h5');
-    cardTitle.classList.add('card-title','text-center');
+    cardTitle.classList.add('card-title','text-center','fw-bold');
     cardTitle.textContent = titulo;
     let cardDesc = document.createElement('div');
     cardDesc.classList.add('container','card-desc','text-center');
     cardDesc.innerText = descricao;
     let cardData = document.createElement('div');
-    cardData.classList.add('container','card-data');
+    cardData.classList.add('container','card-data','text-nowrap');
     cardData.innerText = dateFormater(dataInicio) + ' - ' + dateFormater(dataFinal);
     let cardCheck = document.createElement('div');
     cardCheck.classList.add('form-check');
@@ -64,6 +64,7 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
     cardCheckLabel.innerText = 'Concluído';
     if(concluido===true){
         cardCheckInput.checked = true;
+        cardTitle.classList.remove('fw-bold');
     }
     let cardBtnExcluir = document.createElement('button');
     cardBtnExcluir.classList.add('btn','btn-danger','btn-excluir');
@@ -131,6 +132,7 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     cardCheckInput.id = 'checkboxAPI';
     if(concluido===true){
         cardCheckInput.checked = true;
+        titleParahraph.classList.add('fw-bold');
     }
     let cardCheckLabel = document.createElement('label');
     cardCheckLabel.classList.add('form-check-label');
