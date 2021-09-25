@@ -67,15 +67,17 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
         cardTitle.classList.remove('fw-bold');
     }
     let cardBtnExcluir = document.createElement('button');
+    cardBtnExcluir.classList.add('btn','btn-danger','btn-excluir');
+    cardBtnExcluir.innerText = 'Excluir';
     
     cardBtnExcluir.onclick = function(){
+        let delConfirm = confirm("Deseja excluir a nota?")
+        if (delConfirm){
         card.parentNode.removeChild(card)
         localStorage.removeItem('card')
         localStorage.removeItem('cardUser')
-    }
-
-    cardBtnExcluir.classList.add('btn','btn-danger','btn-excluir');
-    cardBtnExcluir.innerText = 'Excluir';
+        }
+    }  
 
     // adicionando elementos ao card
     card.appendChild(cardRow);
