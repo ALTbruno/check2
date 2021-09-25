@@ -93,7 +93,7 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
 export function criarCardAPI (userId,taskId,titulo,concluido) {
     // coluna de cards
     let divColCards = document.createElement('div');
-    divColCards.classList.add('col-sm-12','col-md-4','mt-5');
+    divColCards.classList.add('col-sm-12','col-md-4','mt-5','container-fluid');
     divColCards.setAttribute('id', 'card-col');
 
     // card 
@@ -121,7 +121,7 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     let cardTitle = document.createElement('div');
     cardTitle.classList.add('container','cardAPI-data');
     let titleParahraph = document.createElement('p');
-    titleParahraph.classList.add('text-center');
+    titleParahraph.classList.add('text-center','fw-bold');
     titleParahraph.textContent = 'Título: ' + titulo;
     cardTitle.appendChild(titleParahraph);
     let cardCheck = document.createElement('div');
@@ -132,7 +132,7 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     cardCheckInput.id = 'checkboxAPI';
     if(concluido===true){
         cardCheckInput.checked = true;
-        titleParahraph.classList.add('fw-bold');
+        titleParahraph.classList.remove('fw-bold');
     }
     let cardCheckLabel = document.createElement('label');
     cardCheckLabel.classList.add('form-check-label');
