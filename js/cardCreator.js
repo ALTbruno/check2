@@ -62,6 +62,17 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
     cardCheckLabel.classList.add('form-check-label');
     cardCheckLabel.setAttribute('for', 'checkbox');
     cardCheckLabel.innerText = 'Concluído';
+    cardCheckInput.onchange = function(){
+        if(cardCheckInput.checked){
+        cardTitle.style.textDecoration="line-through"
+        cardDesc.style.textDecoration="line-through"
+        cardData.style.textDecoration="line-through"
+        }else{
+        cardTitle.style.textDecoration="initial"
+        cardDesc.style.textDecoration="initial"
+        cardData.style.textDecoration="initial"
+        }
+    }
     if(concluido===true){
         cardCheckInput.checked = true;
         cardTitle.classList.remove('fw-bold');
@@ -139,6 +150,13 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     cardCheckInput.classList.add('form-check-input');
     cardCheckInput.type = 'checkbox';
     cardCheckInput.id = 'checkboxAPI';
+    cardCheckInput.onchange = function(){
+        if(cardCheckInput.checked){
+        card.style.textDecoration="line-through"
+        }else{
+        card.style.textDecoration="initial"
+        }
+    }
     if(concluido===true){
         cardCheckInput.checked = true;
         titleParahraph.classList.remove('fw-bold');
