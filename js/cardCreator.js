@@ -62,6 +62,17 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
     cardCheckLabel.classList.add('form-check-label');
     cardCheckLabel.setAttribute('for', 'checkbox');
     cardCheckLabel.innerText = 'Concluído';
+    cardCheckInput.onchange = function(){
+        if(cardCheckInput.checked){
+        cardTitle.style.textDecoration="line-through"
+        cardDesc.style.textDecoration="line-through"
+        cardData.style.textDecoration="line-through"
+        }else{
+        cardTitle.style.textDecoration="initial"
+        cardDesc.style.textDecoration="initial"
+        cardData.style.textDecoration="initial"
+        }
+    }
     if(concluido===true){
         cardCheckInput.checked = true;
         cardTitle.classList.remove('fw-bold');
@@ -69,6 +80,15 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
     let cardBtnExcluir = document.createElement('button');
     cardBtnExcluir.classList.add('btn','btn-danger','btn-excluir');
     cardBtnExcluir.innerText = 'Excluir';
+    
+    cardBtnExcluir.onclick = function(){
+        let delConfirm = confirm("Deseja excluir a nota?")
+        if (delConfirm){
+        card.parentNode.removeChild(card)
+        localStorage.removeItem('card')
+        localStorage.removeItem('cardUser')
+        }
+    }  
 
     // adicionando elementos ao card
     card.appendChild(cardRow);
@@ -130,9 +150,22 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     cardCheckInput.classList.add('form-check-input');
     cardCheckInput.type = 'checkbox';
     cardCheckInput.id = 'checkboxAPI';
+    // informação 'concluido' obtida da API
     if(concluido===true){
         cardCheckInput.checked = true;
+        titleParahraph.style.textDecoration="line-through"
         titleParahraph.classList.remove('fw-bold');
+    }
+    // para caso o usuario queira marcar como 'concluido'
+    cardCheckInput.onchange = function(){
+        if(cardCheckInput.checked){
+        titleParahraph.style.textDecoration="line-through"
+        titleParahraph.classList.remove('fw-bold');
+        titleParahraph.style.fontWeight='normal';
+        }else{
+        titleParahraph.style.textDecoration="initial";
+        titleParahraph.style.fontWeight='bold';
+        }
     }
     let cardCheckLabel = document.createElement('label');
     cardCheckLabel.classList.add('form-check-label');

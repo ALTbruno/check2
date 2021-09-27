@@ -48,3 +48,24 @@ form {
     /* font-size: 20px; */
 }    
 
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+li {
+    list-style: none;
+}
+
+.modal-header {
+    background-color: #61C3B6;
+}
+
+.modal-header button {
+    background-color: #DC0000;
+    color: #fff;
+}
+
+.modal-body {
+    background-color: #F8F9FA;
+}
