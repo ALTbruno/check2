@@ -150,16 +150,22 @@ export function criarCardAPI (userId,taskId,titulo,concluido) {
     cardCheckInput.classList.add('form-check-input');
     cardCheckInput.type = 'checkbox';
     cardCheckInput.id = 'checkboxAPI';
-    cardCheckInput.onchange = function(){
-        if(cardCheckInput.checked){
-        card.style.textDecoration="line-through"
-        }else{
-        card.style.textDecoration="initial"
-        }
-    }
+    // informação 'concluido' obtida da API
     if(concluido===true){
         cardCheckInput.checked = true;
+        titleParahraph.style.textDecoration="line-through"
         titleParahraph.classList.remove('fw-bold');
+    }
+    // para caso o usuario queira marcar como 'concluido'
+    cardCheckInput.onchange = function(){
+        if(cardCheckInput.checked){
+        titleParahraph.style.textDecoration="line-through"
+        titleParahraph.classList.remove('fw-bold');
+        titleParahraph.style.fontWeight='normal';
+        }else{
+        titleParahraph.style.textDecoration="initial";
+        titleParahraph.style.fontWeight='bold';
+        }
     }
     let cardCheckLabel = document.createElement('label');
     cardCheckLabel.classList.add('form-check-label');
