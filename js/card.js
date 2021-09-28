@@ -1,7 +1,9 @@
 import * as cardCreator from './cardCreator.js';
+import * as themeSwitcher from './themeSwitcher.js';
 
 const cardSectionUser = document.querySelector('#card-section-user');
 const cardSectionAPI = document.querySelector('#card-section-api');
+const botaoDark = document.getElementById('btn-dark');
 
 document.querySelector(".navbar-brand").addEventListener('click', function () {
     location.href = 'index.html';
@@ -20,3 +22,15 @@ apiCards = apiCards.concat(JSON.parse(sessionStorage.getItem('cardAPI')));
 for (const card of apiCards) {
     cardSectionAPI.appendChild(cardCreator.criarCardAPI(card.userId,card.id,card.title,card.completed));
 }
+
+botaoDark.addEventListener('click', () =>
+{
+    if(document.querySelector('body').style.backgroundColor == "white")
+    {
+        themeSwitcher.darkMode(); 
+    }
+    else
+    {
+        themeSwitcher.lightMode();
+    }
+})

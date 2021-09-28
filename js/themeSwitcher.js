@@ -3,6 +3,7 @@ const nav = document.querySelector('nav');
 const a = document.getElementById('a-to-do');
 const h1 = document.querySelector('h1');
 const sobreNos = document.getElementById('about-us');
+const apiH1 = document.getElementById('api-card');
 
 
 export function darkMode() {
@@ -16,6 +17,7 @@ export function darkMode() {
 
     a.style.color = "white";
     h1.style.color = "white";
+    apiH1.style.color = "white";
     sobreNos.style.color = "white";
 
 }
@@ -32,5 +34,6 @@ export function lightMode() {
 
     a.style.color = "black";
     h1.style.color = "black";
+    apiH1.style.color = "black";
     sobreNos.style.color = "black";
 }

@@ -70,6 +70,11 @@ li {
     background-color: #F8F9FA;
 }
 
+.row
+{
+    padding: 10px;
+}
+
 .delete-modal{
     width: 500px;
     height: 150px;
