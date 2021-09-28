@@ -73,22 +73,54 @@ export function criarCardUser (titulo,descricao,dataInicio,dataFinal,concluido) 
         cardData.style.textDecoration="initial"
         }
     }
-    if(concluido===true){
-        cardCheckInput.checked = true;
-        cardTitle.classList.remove('fw-bold');
-    }
+    // if(concluido===true){
+    //     cardCheckInput.checked = true;
+    //     cardTitle.classList.remove('fw-bold');
+    // }
+
     let cardBtnExcluir = document.createElement('button');
     cardBtnExcluir.classList.add('btn','btn-danger','btn-excluir');
     cardBtnExcluir.innerText = 'Excluir';
+    cardBtnExcluir.addEventListener('click', function(){
+        modalDiv.style.display = 'block';
+    })
     
-    cardBtnExcluir.onclick = function(){
-        let delConfirm = confirm("Deseja excluir a nota?")
-        if (delConfirm){
-        card.parentNode.removeChild(card)
-        localStorage.removeItem('card')
-        localStorage.removeItem('cardUser')
-        }
-    }  
+    let modalDiv = document.createElement('div');
+    modalDiv.classList.add('delete-modal');
+    let tagH2 = document.createElement('h2');
+    tagH2.classList.add('modal-title');
+    let textoTagH2 = document.createTextNode('Tem certeza?');
+    tagH2.appendChild(textoTagH2);
+    let tagP = document.createElement('p');
+    tagP.classList.add('modal-title');
+    let textoTagP = document.createTextNode('Esta ação não poderá ser desfeita.');
+    tagP.appendChild(textoTagP);
+    let btnDiv = document.createElement('div');
+    btnDiv.classList.add('btn-div');
+    let btnClose = document.createElement('div');
+    btnClose.classList.add('close');
+    btnClose.innerText = 'Fechar'
+    btnClose.addEventListener('click', function(){
+        modalDiv.style.display = 'none'
+    })
+    let btnConfirmDelete = document.createElement('div');
+    btnConfirmDelete.classList.add('confirm')
+    btnConfirmDelete.innerText = 'Apagar'
+    btnConfirmDelete.addEventListener('click', function(){
+            card.parentNode.removeChild(card)
+            localStorage.removeItem('card')
+            localStorage.removeItem('cardUser')
+            modalDiv.style.display = 'none'
+    })
+
+    modalDiv.appendChild(tagH2);
+    modalDiv.appendChild(tagP);
+    btnDiv.appendChild(btnConfirmDelete);
+    btnDiv.appendChild(btnClose);
+    modalDiv.appendChild(btnDiv);
+    document.body.appendChild(modalDiv);
+
+    
 
     // adicionando elementos ao card
     card.appendChild(cardRow);
