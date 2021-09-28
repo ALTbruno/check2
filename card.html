@@ -11,11 +11,11 @@
     <link rel="shortcut icon" href="./img/check.png" />
     <title>TO-DOS</title>
 </head>
-<body>
+<body style="background-color: white;">
     <header>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <a class="navbar-brand" href="#" id="a-to-do">
                     <img src="./img/notepad-2642816-2192663.png" alt="" width="30" height="24" class="d-inline-block align-text-top">
                     TO DO
                 </a>
@@ -50,18 +50,18 @@
                         </li>
                     </ul>
                     <div class="d-flex">
-                        <button class="btn btn-dark" type="submit">Dark Mode</button>
+                        <button class="btn btn-dark" type="submit" id="btn-dark">Dark Mode</button>
                     </div>
                 </div>
             </div>
         </nav>
     </header>
     <section class='container-fluid'>
-        <h1>USER CARD</h2>
+        <h1>USER CARD</h1>
         <div class="row justify-content-center" id="card-section-user"></div>
     </section>
     <section class='container-fluid'>
-        <h1>API CARD</h2>
+        <h1 id="api-card">API CARD</h1>
         <div class="row justify-content-center" id="card-section-api"></div>
     </section>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>

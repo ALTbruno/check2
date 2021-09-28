@@ -69,3 +69,8 @@ li {
 .modal-body {
     background-color: #F8F9FA;
 }
+
+.row
+{
+    padding: 10px;
+}
