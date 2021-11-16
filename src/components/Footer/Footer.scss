@@ -1,0 +1,21 @@
+.footer-section {
+    height: 150px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333652;
+
+    ul{
+        list-style: none;
+        display: flex;
+        flex-direction: row;
+        li{
+            a{
+                :hover{
+                    fill: #FAD02C;
+                }
+            }
+        }
+    }
+}

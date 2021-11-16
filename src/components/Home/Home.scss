@@ -1,0 +1,22 @@
+.home-section {
+    height: 100vh;
+    width: 100%;
+    background-image: url(./home-background.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .navbar{
+        background-color: #333652;
+    }
+
+    .texto-home{
+        padding-top: 330px;
+        color: #E9EAEC;
+        text-align: center;
+        font-family: 'Roboto Condensed', sans-serif;
+        h2{
+            font-size: 80px;
+        }
+    }
+}

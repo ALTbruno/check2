@@ -1,0 +1,26 @@
+.about-section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url(./217954.jpg);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    .profile-photo{
+        margin: 0px 50px 0px 200px;
+
+        img{
+            height: 512px;
+            width: 512px;
+            clip-path: circle(50% at 50% 50%);
+        }
+    }
+
+    .about-me-text{
+        margin: 0px 200px 0px 50px;
+        color: #E9EAEC;
+    }
+}
